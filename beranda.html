@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temukan & Sewa Freelancer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333
+            ;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        header img {
+            width: 100px;
+        }
+
+        header nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav a {
+            text-decoration: none;
+            color: #2f3b52;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header nav a:hover {
+            background-color: #2f3b52;
+            color: white;
+        }
+
+        header button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        header button:hover {
+            background-color: #0056b3;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #2f3b52;
+            color: #ffffff;
+            padding: 50px 20px;
+        }
+
+        .hero-content {
+            max-width: 50%;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5em;
+        }
+
+        .hero-content p {
+            margin: 20px 0;
+        }
+
+        .hero-content input {
+            padding: 10px;
+            width: 70%;
+            margin-right: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .hero-content button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .hero-content button:hover {
+            background-color: #0056b3;
+        }
+
+        .hero-image img {
+            width: 300px;
+            border-radius: 10px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            background-color: #f8f9fa;
+            padding: 20px 0;
+        }
+
+        .stats div {
+            text-align: center;
+        }
+
+        .stats div h3 {
+            margin: 5px 0;
+        }
+
+        .stats div p {
+            color: #777;
+        }
+
+        footer {
+            background-color: #2f3b52;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="roomakreatif.jpg" alt="Logo Guru">
+        <nav>
+            <a href="beranda.html">Beranda</a>
+            <a href="profiluser.html">Profil</a>
+            <a href="carifreelance.html">Cari Karya</a>
+            <a href="solusi.html">Solusi</a>
+            <a href="kontak.html">Kontak</a>
+            <a href="faq.html">FAQ</a> 
+        </nav>
+        <button id="signUpButton" onclick="location.href='signup.html'">Sign Up</button>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Dapatkan Karya Mahasiswa Tersembunyi</h1>
+            <p>Bekerja dengan talenta karya terbaik mahasiswa dari seluruh dunia melalui platform kami yang aman, fleksibel, dan hemat biaya.</p>
+            <input type="text" placeholder="Keahlian apa yang Anda cari?">
+            <button>Cari</button>
+        </div>
+        <div class="hero-image">
+            <img src="foto-removebg-preview.png" alt="Freelancer">
+        </div>
+    </section>
+
+    <section class="stats">
+        <div>
+            <h3>800,000</h3>
+            <p>Pemberi Kerja di Seluruh Dunia</p>
+        </div>
+        <div>
+            <h3>100,000+</h3>
+            <p>Karya Mahasiswa Tersedia</p>
+        </div>
+        <div>
+            <h3>4.8/5</h3>
+            <p>Rating Rata-rata</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 MahaProject. Semua hak cipta dilindungi.</p>
+        <a href="#">Privasi</a> | <a href="#">Ketentuan Layanan</a>
+    </footer>
+</body>
+</html>

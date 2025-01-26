@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Perusahaan - MahaProject</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f5f5f5 ;
+            color: white;
+        }
+
+        header img {
+            width: 100px;
+        }
+
+        header nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav a {
+            text-decoration: none;
+            color: #2f3b52;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header nav a:hover {
+            background-color: #2f3b52;
+            color: white;
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #2f3b52;
+        }
+        h1 ,h3 {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .scroll-container {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 10px 0;
+        }
+
+        .scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb {
+            background-color: #2f3b52;
+            border-radius: 10px;
+        }
+
+        .card {
+            flex: 0 0 300px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .card h3 {
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo MahaProject">
+        <nav>
+            <a href="beranda.html">Beranda</a>
+            <a href="profiluser.html">Profil</a>
+            <a href="carifreelance.html">Cari Karya</a>
+            <a href="solusi.html">Solusi</a>
+            <a href="kontak.html">Kontak</a>
+            <a href="faq.html">FAQ</a>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Tentang Kami</h2>
+        <p>MahaProject adalah platform yang menghubungkan mahasiswa dengan 
+            pemberi kerja untuk berbagai jenis proyek. Kami menyediakan akses mudah 
+            untuk menemukan mahasiswa terbaik dalam bidang desain, penulisan, pemrograman, dan lainnya.</p>
+    </section>
+
+    <section>
+        <h2>Visi & Misi</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>Visi</h3>
+                <p>"Menjadi platform digital inovatif yang memperkuat ekosistem kewirausahaan berkelanjutan 
+                    dengan menghubungkan mahasiswa berbakat dengan peluang ekonomi dan pengembangan keterampilan."
+                </p>
+            </div>
+            <div class="card">
+                <h3>Misi</h3>
+                <p>1. Mendukung ekosistem kewirausahaan berkelanjutan<br>
+                   2. Mengenalkan ide baru ke pasar<br>
+                   3. Meningkatkan pemberdayaan ekonomi mahasiswa<br>
+                   4. Menyediakan platform terintegrasi<br>
+                   5. Membangun komunitas kreatif mahasiswa<br>
+                   6. Berperan dalam pertumbuhan ekonomi kreatif Indonesia<br>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Our Team</h2>
+        <div class="scroll-container">
+            <div class="card">
+                <img src="ramzy.jpg" alt="Foto Ramzy Abdat">
+                <h3>Ramzy Abdat</h3>
+                <h1>Managing Director</h1>
+            </div>
+            <div class="card">
+                <img src="risky.jpg" alt="Foto Risky Suryaningsih">
+                <h3>Risky Suryaningsih</h3>
+                <h1>Developer</h1>
+            </div>
+            <div class="card">
+                <img src="jelita.jpg" alt="Foto Jelita Eka P">
+                <h3>Jelita Eka P.A</h3>
+                <h1>Founder</h1>
+            </div>
+            <div class="card">
+                <img src="wawa.jpg" alt="Foto Nazua Zuhria">
+                <h3>Nazua Zuhria</h3>
+                <h1>Public Relation</h1>
+            </div>
+            <div class="card">
+                <img src="sukma.jpg" alt="Foto Sukma Nashohah">
+                <h3>Sukma Nashohah</h3>
+                <h1>UI/UX Designer</h1s>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 MahaProject. Semua hak cipta dilindungi.</p>
+        <a href="#">Privasi</a> | <a href="#">Ketentuan Layanan</a>
+    </footer>
+</body>
+</html>

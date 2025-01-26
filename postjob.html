@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temukan & Sewa Freelancer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        header img {
+            width: 100px;
+        }
+
+        header nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #2f3b52;
+            color: #ffffff;
+            padding: 50px 20px;
+        }
+
+        .hero-content {
+            max-width: 50%;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5em;
+        }
+
+        .hero-content p {
+            margin: 20px 0;
+        }
+
+        .hero-content input {
+            padding: 10px;
+            width: 70%;
+            margin-right: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .hero-content button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .hero-content button:hover {
+            background-color: #0056b3;
+        }
+
+        .hero-image img {
+            width: 300px;
+            border-radius: 10px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            background-color: #f8f9fa;
+            padding: 20px 0;
+        }
+
+        .stats div {
+            text-align: center;
+        }
+
+        .stats div h3 {
+            margin: 5px 0;
+        }
+
+        .stats div p {
+            color: #777;
+        }
+
+        .page-section {
+            padding: 50px 20px;
+        }
+
+        .page-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2f3b52;
+        }
+
+        .about-content, .solutions-content {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #2f3b52;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .popup h3 {
+            margin-top: 0;
+        }
+
+        .popup button {
+            margin-top: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .popup button:hover {
+            background-color: #0056b3;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .find-section {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .find-card {
+            flex: 1 1 calc(50% - 20px);
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .find-card h3 {
+            margin-top: 0;
+            color: #2f3b52;
+        }
+
+        .find-card p {
+            color: #555;
+        }
+
+        .find-card button {
+            margin-top: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .find-card button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo Guru">
+        <nav>
+            <a href="beranda.html">Beranda</a>
+            <a href="profiluser.html">Profil</a>
+            <a href="carifreelance.html">Cari Freelancer</a>
+            <a href="solusi.html">Solusi</a>
+            <a href="kontak.html">Kontak</a>
+            <a href="faq.html">FAQ</a>
+        </nav>
+        <button id="postJobButton">Pasang Pekerjaan</button>
+    </header>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="popup" id="popup">
+        <h3>Pasang Pekerjaan</h3>
+        <p>Isi detail di bawah ini untuk memasang pekerjaan Anda dan menemukan freelancer yang tepat.</p>
+        <label for="jobTitle">Judul Pekerjaan:</label>
+        <input type="text" id="jobTitle" placeholder="Misalnya: Pengembang Web">
+        <br><br>
+        <label for="jobDescription">Deskripsi Pekerjaan:</label>
+        <textarea id="jobDescription" placeholder="Deskripsikan proyek Anda..." rows="4"></textarea>
+        <br><br>
+        <label for="jobBudget">Anggaran:</label>
+        <input type="number" id="jobBudget" placeholder="Misalnya: 500">
+        <br><br>
+        <label for="jobFiles">Unggah File:</label>
+        <input type="file" id="jobFiles" multiple>
+        <br><br>
+    
+        <!-- New Dropdown for Divisi Freelance -->
+        <label for="freelancerDivision">Pilih Divisi Freelance:</label>
+        <select id="freelancerDivision">
+            <option value="">Pilih Divisi</option>
+            <option value="copywriting">Copywriting</option>
+            <option value="design">Desain</option>
+            <option value="programming">Pemrograman</option>
+        </select>
+        <br><br>
+    
+        <button id="submitJob">Kirim</button>
+        <button id="closePopup">Tutup</button>
+    </div>
+    
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Temukan & Sewa Freelancer Ahli</h1>
+            <p>Bekerja dengan talenta freelance terbaik dari seluruh dunia melalui platform kami yang aman, fleksibel, dan hemat biaya.</p>
+            <input type="text" placeholder="Keahlian apa yang Anda cari?">
+            <button>Cari</button>
+        </div>
+        <div class="hero-image">
+            <img src="freelancer-placeholder.jpg" alt="Freelancer">
+        </div>
+    </section>
+
+    <section class="find-section">
+        <div class="find-card">
+            <h3>Cari Freelancer</h3>
+            <p>Jelajahi profil, portofolio, dan ulasan untuk menemukan freelancer yang sempurna untuk proyek Anda.</p>
+            <button>Mulai Mencari</button>
+        </div>
+        <div class="find-card">
+            <h3>Cari Pekerjaan</h3>
+            <p>Telusuri berbagai lowongan pekerjaan dan temukan proyek yang sesuai dengan keterampilan dan minat Anda.</p>
+            <button>Telusuri Pekerjaan</button>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div>
+            <h3>800,000</h3>
+            <p>Pemberi Kerja di Seluruh Dunia</p>
+        </div>
+        <div>
+            <h3>1 Juta</h3>
+            <p>Faktur yang Dibayar</p>
+        </div>
+        <div>
+            <h3>$250 Juta</h3>
+            <p>Dibayarkan kepada Freelancer</p>
+        </div>
+        <div>
+            <h3>99%</h3>
+            <p>Tingkat Kepuasan Pelanggan</p>
+        </div>
+    </section>
+
+    <section class="page-section" id="about">
+        <h2>Tentang Kami</h2>
+        <div class="about-content">
+            <p>Kami adalah platform global yang menghubungkan bisnis dengan profesional freelance. Misi kami adalah menciptakan peluang bagi freelancer dan pemberi kerja dengan menyediakan ruang kerja yang aman dan andal.</p>
+        </div>
+    </section>
+
+    <section class="page-section" id="solutions">
+        <h2>Solusi Kami</h2>
+        <div class="solutions-content">
+            <p>Dari alat manajemen proyek hingga perlindungan pembayaran, platform kami dirancang untuk memastikan kolaborasi yang lancar dan kesuksesan untuk setiap proyek. Temukan bagaimana kami dapat membantu mewujudkan visi Anda.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Guru. Hak cipta dilindungi. | <a href="#">Kebijakan Privasi</a></p>
+    </footer>
+
+    <script>
+        const postJobButton = document.getElementById('postJobButton');
+        const popup = document.getElementById('popup');
+        const overlay = document.getElementById('overlay');
+        const closePopup = document.getElementById('closePopup');
+
+        postJobButton.addEventListener('click', () => {
+            popup.style.display = 'block';
+            overlay.style.display = 'block';
+        });
+
+        closePopup.addEventListener('click', () => {
+            popup.style.display = 'none';
+            overlay.style.display = 'none';
+        });
+
+        overlay.addEventListener('click', () => {
+            popup.style.display = 'none';
+            overlay.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

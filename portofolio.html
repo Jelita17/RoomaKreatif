@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile and Portfolio Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+
+        .header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .header p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .header .rating {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .rating span {
+            font-size: 16px;
+            margin-left: 5px;
+            color: #007bff;
+        }
+
+        .buttons {
+            margin-top: 10px;
+        }
+
+        .buttons button {
+            margin-right: 10px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        .info-sections {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .section {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .section:last-child {
+            margin-right: 0;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+            display: inline-block;
+        }
+
+        .section p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .portfolio {
+            margin-top: 20px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .portfolio-grid .item {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .portfolio-grid .item:hover {
+            transform: scale(1.05);
+        }
+
+        .portfolio-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .portfolio-grid .price {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            font-size: 14px;
+            border-radius: 0 0 8px 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Profile Section -->
+        <div class="header">
+            <img src="pegawai.jpg" alt="Profile Picture">
+            <div>
+                <h1>Juminten</h1>
+                <p>Graphic Designer & Programmer</p>
+                <div class="rating">
+                    <strong>9.2</strong>
+                    <span>⭐⭐⭐⭐⭐</span>
+                </div>
+                <div class="buttons">
+                    <button>Send Message</button>
+                    <button>Contacts</button>
+                    <button>Report User</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-sections">
+            <div class="section">
+                <h2>Work</h2>
+                <p><strong>Freelance Graphic Design</strong></p>
+                <p>Specializes in branding and illustrations.</p>
+                <p><strong>Programming Projects</strong></p>
+                <p>Experienced in web and mobile app development.</p>
+            </div>
+
+            <div class="section">
+                <h2>Contact Information</h2>
+                <p><strong>Phone:</strong> +62 812 3456 7890</p>
+                <p><strong>Address:</strong> Jl. Raya Jakarta No. 123, Indonesia</p>
+                <p><strong>Email:</strong> juminten@example.com</p>
+                <p><strong>Website:</strong> www.jumintenportfolio.com</p>
+            </div>
+        </div>
+
+        <div class="info-sections">
+            <div class="section">
+                <h2>Basic Information</h2>
+                <p><strong>Birthday:</strong> March 15, 1990</p>
+                <p><strong>Gender:</strong> Female</p>
+            </div>
+
+            <div class="section">
+                <h2>Timeline</h2>
+                <p>Completed 50+ graphic design projects and 20+ programming projects.</p>
+            </div>
+        </div>
+
+        <!-- Portfolio Section -->
+        <div class="portfolio">
+            <h2>Portfolio</h2>
+            <div class="portfolio-grid">
+                <div class="item" onclick="goToPayment('Design Project 1', 100)">
+                    <img src="foto-foto.jpg" alt="Design Project 1">
+                    <div class="price">$100</div>
+                </div>
+                <div class="item" onclick="goToPayment('Design Project 2', 150)">
+                    <img src="foto-foto.jpg" alt="Design Project 2">
+                    <div class="price">$150</div>
+                </div>
+                <div class="item" onclick="goToPayment('Design Project 3', 200)">
+                    <img src="foto-foto.jpg" alt="Design Project 3">
+                    <div class="price">$200</div>
+                </div>
+                <div class="item" onclick="goToPayment('Design Project 1', 100)">
+                    <img src="foto-foto.jpg" alt="Design Project 4">
+                    <div class="price">$100</div>
+                </div>
+                <div class="item" onclick="goToPayment('Design Project 2', 150)">
+                    <img src="foto-foto.jpg" alt="Design Project 5">
+                    <div class="price">$150</div>
+                </div>
+                <div class="item" onclick="goToPayment('Design Project 3', 200)">
+                    <img src="foto-foto.jpg" alt="Design Project 6">
+                    <div class="price">$200</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goToPayment(itemName, itemPrice) {
+            const url = `payment.html?name=${encodeURIComponent(itemName)}&price=${encodeURIComponent(itemPrice)}`;
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
